@@ -1,0 +1,64 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(120deg, #f6d365, #fda085);
+  transition: background 1s ease;
+}
+
+.container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  width: 500px;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+button.option {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  transition: transform 0.2s ease, background 0.3s ease, opacity 0.5s ease;
+}
+
+button.option:hover {
+  transform: scale(1.05);
+  background: #f0f0f0;
+}
+
+button.correct {
+  background: #4CAF50;
+  color: white;
+  animation: correctFlash 0.5s;
+}
+
+button.wrong {
+  background: #F44336;
+  color: white;
+  animation: wrongFlash 0.5s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes correctFlash {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+@keyframes wrongFlash {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2) rotate(-10deg); }
+  100% { transform: scale(1); }
+}
